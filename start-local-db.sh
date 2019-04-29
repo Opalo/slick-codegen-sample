@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+ROOT_PASS=${ROOT_PASS:-root}
+DB_USER_PASS=${DB_USER_PASS:-test}
+DB_USER=${DB_USER:-test}
+DB=${DB:-test}
+
+docker run -e MYSQL_ROOT_PASSWORD=$ROOT_PASS -e MYSQL_DATABASE=$DB -e MYSQL_USER=$DB_USER -e MYSQL_PASSWORD=$DB_USER_PASS -p 3306:3306 mysql:8.0.15
